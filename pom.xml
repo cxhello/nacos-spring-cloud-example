@@ -11,6 +11,7 @@
     </parent>
 
     <modules>
+        <module>nacos-spring-cloud-config-example</module>
         <module>nacos-spring-cloud-consumer-example</module>
         <module>nacos-spring-cloud-provider-example</module>
     </modules>
