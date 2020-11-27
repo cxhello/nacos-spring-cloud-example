@@ -9,7 +9,7 @@
 | MySQL | 192.168.223.135 | 部署MySQL数据库和Nginx |
 | Nacos | 192.168.223.137 | 部署Nacos集群 |
 
-资源有限，MySQL 部署了一台机器，Nginx 和 Nacos集群部署在了另一台机器。如果在生产环境部署，可以按照自己的需求调整。
+资源有限，MySQL 部署了一台机器，Nginx 和 Nacos 集群部署在了另一台机器。如果在生产环境部署，可以按照自己的需求调整。
 
 
 ### 配置步骤
@@ -74,8 +74,11 @@ vim cluster.conf
 
 
 修改前
+
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606488337394-e1e67699-037f-4b33-b2b5-647ecf9344cf.png#align=left&display=inline&height=78&margin=%5Bobject%20Object%5D&name=image.png&originHeight=78&originWidth=670&size=11210&status=done&style=none&width=670)
+
 修改后
+
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606488400490-81afe926-b941-417b-a086-804c36939c32.png#align=left&display=inline&height=81&margin=%5Bobject%20Object%5D&name=image.png&originHeight=81&originWidth=938&size=12922&status=done&style=none&width=938)
 
 
@@ -121,9 +124,16 @@ ps -ef | grep nginx
 # 浏览器访问
 http://192.168.223.135:1111/nacos
 ```
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606490093557-89e84535-5aa8-49e3-abd4-910c4dc041b6.png#align=left&display=inline&height=59&margin=%5Bobject%20Object%5D&name=image.png&originHeight=59&originWidth=538&size=4080&status=done&style=none&width=538)![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606490945408-7ad57595-af76-43b5-a359-52f2390829e8.png#align=left&display=inline&height=96&margin=%5Bobject%20Object%5D&name=image.png&originHeight=96&originWidth=818&size=11849&status=done&style=none&width=818)
+![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606490093557-89e84535-5aa8-49e3-abd4-910c4dc041b6.png#align=left&display=inline&height=59&margin=%5Bobject%20Object%5D&name=image.png&originHeight=59&originWidth=538&size=4080&status=done&style=none&width=538)
+
+![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606490945408-7ad57595-af76-43b5-a359-52f2390829e8.png#align=left&display=inline&height=96&margin=%5Bobject%20Object%5D&name=image.png&originHeight=96&originWidth=818&size=11849&status=done&style=none&width=818)
+
 新增一个配置进行测试查看是否存入数据库
+
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606491336960-97a5767d-efb9-4beb-bc67-79567ab9ea81.png#align=left&display=inline&height=528&margin=%5Bobject%20Object%5D&name=image.png&originHeight=528&originWidth=1476&size=52741&status=done&style=none&width=1476)
+
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606491560813-87708009-698e-4fff-b00b-d4f1f7fc71b5.png#align=left&display=inline&height=396&margin=%5Bobject%20Object%5D&name=image.png&originHeight=396&originWidth=510&size=22023&status=done&style=none&width=510)
+
 在 nacos-spring-cloud-provider-example 中将 application.properties 中服务注册的地址修改为 spring.cloud.nacos.discovery.server-addr=192.168.223.135:1111 进行测试
+
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/2584604/1606494749377-769bfeba-98a0-4ab1-81e9-fc22bdc3e6ff.png#align=left&display=inline&height=432&margin=%5Bobject%20Object%5D&name=image.png&originHeight=432&originWidth=1890&size=45192&status=done&style=none&width=1890)
